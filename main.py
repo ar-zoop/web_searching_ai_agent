@@ -1,7 +1,5 @@
 from dotenv import load_dotenv
-from pydantic import BaseModel
 from langchain_openai import ChatOpenAI
-from langchain_core.output_parsers import PydanticOutputParser
 from langchain.agents import create_agent
 from langchain_core.messages import SystemMessage
 import os
@@ -43,5 +41,6 @@ result = agent.invoke(
 
 # Extract and parse AI message content
 ai_content = result['messages'][-1].content
+
 
 print(ai_content)
